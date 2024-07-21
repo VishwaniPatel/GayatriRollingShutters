@@ -3,9 +3,9 @@ import styled from "styled-components";
 // Components
 import AddImage2 from "../../assets/img/add/add2.jpg";
 import WhyToChoose from "../Elements/WhyToChoose";
-export default function Blog() {
+export default function AboutUs() {
   return (
-    <Wrapper id="blog">
+    <Wrapper id="aboutus">
       <div className="lightBg">
       <div className="container">
           <Advertising className="flexSpaceCenter">

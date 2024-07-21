@@ -15,7 +15,7 @@ import ProjectImg11 from "../../assets/img/projects/11.jpg";
 
 export default function Projects() {
   return (
-    <GalleryWrapper>
+    <GalleryWrapper id='projects'>
       <div className="container">
       <HeaderInfo>
           <h1 className="font40 extraBold">Our Awesome Projects</h1>

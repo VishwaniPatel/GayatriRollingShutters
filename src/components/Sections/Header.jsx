@@ -6,9 +6,11 @@ import FullButton from "../Buttons/FullButton";
 import HeaderImage from "../../assets/img/heroImg.jpg";
 import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
+import ClientSlider from "../Elements/ClientSlider";
 
 export default function Header() {
   return (
+    <>
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div>
@@ -41,6 +43,10 @@ export default function Header() {
         <GreyDiv className="lightBg"></GreyDiv>
       </RightSide>
     </Wrapper>
+    <div className="container">
+    <ClientSlider />
+  </div>
+  </>
   );
 }
 

@@ -63,27 +63,14 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             Projects
           </Link>
         </li>
-        {/* <li className="semiBold font15 pointer">
-          <Link
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            activeClass="active"
-            className="whiteColor"
-            style={{ padding: "10px 15px" }}
-            to="blog"
-            spy={true}
-            smooth={true}
-            offset={-60}
-          >
-            Blog
-          </Link>
-        </li> */}
+       
         <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="pricing"
+            to="aboutus"
             spy={true}
             smooth={true}
             offset={-60}
