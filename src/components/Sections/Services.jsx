@@ -3,7 +3,6 @@ import styled from "styled-components";
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
-import FullButton from "../Buttons/FullButton";
 // Assets
 import AddImage1 from "../../assets/img/add/1.jpg";
 import AddImage2 from "../../assets/img/add/2.jpg";

@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-scroll";
+import styled from "styled-components";
 // Assets
-import LogoImg from "../../assets/svg/Logo";
 import WhiteLogo from "../../assets/svg/WhiteLogo";
 
 export default function Contact() {

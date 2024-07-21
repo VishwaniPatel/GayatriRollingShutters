@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 // Components
-import BlogBox from "../Elements/BlogBox";
-import FullButton from "../Buttons/FullButton";
-import TestimonialSlider from "../Elements/TestimonialSlider";
 import AddImage2 from "../../assets/img/add/add2.jpg";
 import WhyToChoose from "../Elements/WhyToChoose";
 export default function Blog() {
