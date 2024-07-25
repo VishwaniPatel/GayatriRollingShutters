@@ -43,8 +43,10 @@ export default function Header() {
         <GreyDiv className="lightBg"></GreyDiv>
       </RightSide>
     </Wrapper>
+    <div className="lightBg" style={{ padding: "50px 0" }}>
     <div className="container">
     <ClientSlider />
+    </div>
   </div>
   </>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
 // Assets
 import ProjectImg1 from "../../assets/img/projects/1.jpg";
 import ProjectImg2 from "../../assets/img/projects/2.jpg";
@@ -12,106 +13,109 @@ import ProjectImg8 from "../../assets/img/projects/8.jpg";
 import ProjectImg9 from "../../assets/img/projects/9.jpg";
 import ProjectImg10 from "../../assets/img/projects/10.jpeg";
 import ProjectImg11 from "../../assets/img/projects/11.jpg";
+import ProjectImg12 from "../../assets/img/projects/12.jpg";
+import ProjectImg13 from "../../assets/img/projects/13.jpg";
+import ProjectImg14 from "../../assets/img/projects/14.jpg";
+import ProjectImg15 from "../../assets/img/projects/15.jpg";
+import ProjectImg16 from "../../assets/img/projects/16.jpg";
+import ProjectImg17 from "../../assets/img/projects/17.jpg";
+import ProjectImg18 from "../../assets/img/projects/18.jpg";
+import ProjectImg19 from "../../assets/img/projects/19.jpg";
+import ProjectImg20 from "../../assets/img/projects/20.jpg";
 
 export default function Projects() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const images = [
+    ProjectImg1, ProjectImg2, ProjectImg3, ProjectImg4, ProjectImg5,
+    ProjectImg6, ProjectImg7, ProjectImg8, ProjectImg9, ProjectImg10,
+    ProjectImg11, ProjectImg12, ProjectImg13, ProjectImg14, ProjectImg15,
+    ProjectImg16, ProjectImg17, ProjectImg18, ProjectImg19, ProjectImg20,
+  ];
+
   return (
-    <GalleryWrapper id='projects'>
+    <GalleryWrapper id="projects">
       <div className="container">
-      <HeaderInfo>
+        <HeaderInfo>
           <h1 className="font40 extraBold">Our Awesome Projects</h1>
         </HeaderInfo>
-        <div className="gallery">
-          <div className="gallery-item item1" style={{ backgroundImage: `url(${ProjectImg1})` }}></div>
-          <div className="gallery-item item2" style={{ backgroundImage: `url(${ProjectImg2})` }}></div>
-          <div className="gallery-item item3" style={{ backgroundImage: `url(${ProjectImg3})` }}></div>
-          <div className="gallery-item item4" style={{ backgroundImage: `url(${ProjectImg4})` }}></div>
-          <div className="gallery-item item5" style={{ backgroundImage: `url(${ProjectImg5})` }}></div>
-          <div className="gallery-item item6" style={{ backgroundImage: `url(${ProjectImg6})` }}></div>
-          <div className="gallery-item item7" style={{ backgroundImage: `url(${ProjectImg7})` }}></div>
-          <div className="gallery-item item8" style={{ backgroundImage: `url(${ProjectImg8})` }}></div>
-          <div className="gallery-item item9" style={{ backgroundImage: `url(${ProjectImg9})` }}></div>
-          <div className="gallery-item item10" style={{ backgroundImage: `url(${ProjectImg10})` }}></div>
-          <div className="gallery-item item11" style={{ backgroundImage: `url(${ProjectImg11})` }}></div>
-        </div>
+        <Slider {...settings}>
+          {images.map((img, idx) => (
+            <div key={idx} className="gallery-slide">
+              <ImageWrapper style={{ backgroundImage: `url(${img})` }}></ImageWrapper>
+            </div>
+          ))}
+        </Slider>
       </div>
     </GalleryWrapper>
   );
 }
 
 const HeaderInfo = styled.div`
-margin-bottom:20px;
+  margin-bottom: 20px;
   @media (max-width: 860px) {
     text-align: center;
   }
 `;
+
 const GalleryWrapper = styled.section`
   width: 100%;
   padding: 1rem;
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+ margin-bottom: 4rem; 
+  .slick-slider {
+    margin-bottom: 2rem; /* Add bottom margin */
   }
 
-  .gallery-item {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 100%;
+  .slick-slide {
+    padding: 0 8px; /* Add horizontal padding between slides */
   }
+`;
 
-  .item1 {
-    grid-column: span 2;
-    grid-row: span 2;
-    height: auto; /* Adjusted height */
+const ImageWrapper = styled.div`
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  margin-bottom: 8px; /* Space between rows */
+  @media (max-width: 768px) {
+    height: 150px; /* Adjust height for smaller screens */
   }
-
-  .item2 {
-    height: 180px; /* Medium size */
+  @media (max-width: 480px) {
+    height: 100px; /* Adjust height for very small screens */
   }
-
-  .item3 {
-    height: 180px; /* Medium size */
-  }
-
-  .item4 {
-   height: 200px; /* Medium size */
-   
-  }
-
-  .item5 {
-    height: 200px; /* Medium size */
-  }
-
-  .item6 {
-  height: 200px; /* Medium size */
-    grid-column: span 1;
-    grid-row: span 2;
-    height: auto; /* Adjusted height */
-  }
-
-  .item7 {
-    height: 150px; /* Smaller size */
-  }
-
-  .item8 {
-    height: 150px; /* Smaller size */
-  }
-
-  .item9 {
-    height: 250px; /* Smaller size */
-  }
-
-  .item10 {
-    height: 250px; /* Medium size */
-  }
-
-  .item11 {
-    height: 250px; /* Medium size */
-    margin-bottom:100px
-  }
-
-
 `;
