@@ -32,6 +32,11 @@ export default function Projects() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    customPaging: function(i) {
+      return (
+        <div className="custom-dot"></div>
+      );
+    },
     responsive: [
       {
         breakpoint: 1024,
@@ -48,6 +53,7 @@ export default function Projects() {
           slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1,
+          dots: true, // Show dots on smaller screens but customize them
         },
       },
       {
@@ -55,6 +61,7 @@ export default function Projects() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: true, // Show dots on very small screens but customize them
         },
       },
     ],
@@ -68,7 +75,8 @@ export default function Projects() {
   ];
 
   return (
-    <GalleryWrapper id="projects">
+    <Wrapper id="projects">
+    <GalleryWrapper >
       <div className="container">
         <HeaderInfo>
           <h1 className="font40 extraBold">Our Awesome Projects</h1>
@@ -82,9 +90,12 @@ export default function Projects() {
         </Slider>
       </div>
     </GalleryWrapper>
+    </Wrapper>
   );
 }
-
+const Wrapper = styled.section`
+  width: 100%;
+`;
 const HeaderInfo = styled.div`
   margin-bottom: 20px;
   @media (max-width: 860px) {
@@ -95,13 +106,43 @@ const HeaderInfo = styled.div`
 const GalleryWrapper = styled.section`
   width: 100%;
   padding: 1rem;
- margin-bottom: 4rem; 
+  margin-bottom: 4rem;
+
   .slick-slider {
     margin-bottom: 2rem; /* Add bottom margin */
   }
 
   .slick-slide {
     padding: 0 8px; /* Add horizontal padding between slides */
+  }
+
+  .slick-dots {
+    li {
+      margin: 0 4px; /* Reduce spacing between dots */
+    }
+    @media (max-width: 768px) {
+      li {
+        &:nth-child(odd) {
+          display: none; /* Hide every other dot */
+        }
+      }
+    }
+    @media (max-width: 480px) {
+      li {
+        &:nth-child(odd),
+        &:nth-child(even) {
+          display: none; /* Hide more dots on very small screens */
+        }
+      }
+    }
+  }
+
+  .custom-dot {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
   }
 `;
 
