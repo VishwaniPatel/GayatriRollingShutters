@@ -45,7 +45,7 @@ export default function Projects() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1,
         },
@@ -53,7 +53,7 @@ export default function Projects() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -113,9 +113,9 @@ const ImageWrapper = styled.div`
   height: 300px; /* Adjust height as needed */
   margin-bottom: 8px; /* Space between rows */
   @media (max-width: 768px) {
-    height: 150px; /* Adjust height for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
   }
   @media (max-width: 480px) {
-    height: 100px; /* Adjust height for very small screens */
+    height: 250px; /* Adjust height for very small screens */
   }
 `;
